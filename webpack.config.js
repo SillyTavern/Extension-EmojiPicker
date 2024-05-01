@@ -6,6 +6,7 @@ module.exports = {
     output: {
         path: path.join(__dirname, 'dist/'),
         filename: `index.js`,
+        publicPath: '/scripts/extensions/third-party/Extension-EmojiPicker/dist/',
     },
     module: {
         rules: [
@@ -20,6 +21,10 @@ module.exports = {
                     ],
                 },
                 loader: 'babel-loader',
+            },
+            {
+                test: /\.css/,
+                use: ['style-loader', 'css-loader'],
             },
         ],
     },
