@@ -123,6 +123,8 @@ const pickerOptions = {
 const picker = new Picker(pickerOptions);
 const buttonContainer = document.getElementById('rightSendForm');
 const addEmojiButton = document.createElement('div');
+addEmojiButton.id = 'addEmojiButton';
+addEmojiButton.title = 'Insert emoji';
 addEmojiButton.classList.add('fa-solid', 'fa-icons');
 const popper = createPopper(addEmojiButton, picker, {
     placement: 'top-end',
