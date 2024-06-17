@@ -125,13 +125,14 @@ const buttonContainer = document.getElementById('rightSendForm');
 const addEmojiButton = document.createElement('div');
 addEmojiButton.id = 'addEmojiButton';
 addEmojiButton.title = 'Insert emoji';
-addEmojiButton.classList.add('fa-solid', 'fa-icons');
+addEmojiButton.classList.add('fa-solid', 'fa-icons', 'interactable');
+addEmojiButton.tabIndex = 0;
 const popper = createPopper(addEmojiButton, picker, {
     placement: 'top-end',
     modifiers: [],
 });
 picker.classList.add('displayNone');
-buttonContainer.appendChild(addEmojiButton);
+buttonContainer.insertAdjacentElement('afterbegin', addEmojiButton);
 buttonContainer.addEventListener('click', () => {
     picker.classList.toggle('displayNone');
     popper.update();
