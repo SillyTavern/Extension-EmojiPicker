@@ -150,13 +150,13 @@ buttonContainer.addEventListener('click', () => {
 });
 document.body.appendChild(picker);
 document.body.addEventListener('click', (event) => {
-    if (!picker.contains(event.target) && !addEmojiButton.contains(event.target)) {
+    if (!picker.classList.contains('displayNone') && !picker.contains(event.target) && !addEmojiButton.contains(event.target)) {
         picker.classList.add('displayNone');
         popper.update();
     }
 });
 document.body.addEventListener('keyup', (event) => {
-    if (event.key === 'Escape') {
+    if (!picker.classList.contains('displayNone') && event.key === 'Escape') {
         picker.classList.add('displayNone');
         popper.update();
     }
